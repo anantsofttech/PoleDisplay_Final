@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark1">#303F9F</color>
+    <color name="textcolor">#055798</color>
+    <color name="colorAccent">#c40e6fb6</color>
+    <color name="posOrdreLightColor">#e3f2f9</color>
+    <color name="posOrdreDarkColor">#d0edf5</color>
+    <color name="lightskycolor">#70d0edf5</color>
+    <color name="lightgreycolor">#DDDDDD</color>
+    <color name="posOrdreTitleColor">#8fb6d0</color>
+    <color name="posOrdreTitleLightColor">#ec8fb6d0</color>
+    <color name="lighter_gray">#ddd</color>
+    <color name="sky_color">#3333B5E5</color>
+    <color name="lightning_background">#0e6fb6</color>
+    <color name="lightning_background_dark_color">#055798</color>
+    <color name="grey">#b2808080</color>
+    <color name="white">#FFFFFF</color>
+    <color name="store_104color">#ffdcd4</color>
+    <color name="totalColor">#c40e6fb6</color>
+    <color name="lightSkyColor">#e3f2f7</color>
+    <color name="lighterSkyColor">#ebf7fc</color>
+    <color name="GreyColor">#d4aaaaaa</color>
+    <color name="BrightGreyColor">#EEEEEE</color>
+    <color name="BrighterGreyColor">#ECEDF0</color>
+    <color name="middleGreyColor">#D3D3D3</color>
+    <color name="firstRowcolor">#DEE1E6</color>
+    <color name="SecondRowcolor">#F1F3F4</color>
+    <color name="orderHeadercolor">#D6D6D6</color>
+    <color name="firstRowcolor1">#F4F4F4</color>
+    <color name="SecondRowWhiteColor">#FFFFFF</color>
+    <color name="SecondRowcolor3">#f1f5f8</color>
+    <color name="light_grey">#ccbeb9b9</color>
+    <color name="placeholder_gray">#A9A9A9</color>
+    <color name="gradiant_start">#2C83D6</color>
+    <color name="gradiant_center">#41B9E9</color>
+    <color name="gradiant_end">#3256A6</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="black_alpha">#99000000</color>
+    <color name="color_green">#7cc025</color>
+    <color name="color_sky">#3ac1be</color>
+
+    <color name="green">#188038</color>
+    <color name="red">#ff0000</color>
+</resources>

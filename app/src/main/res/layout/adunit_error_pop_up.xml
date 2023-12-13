@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="13dp">
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:text="Error Message"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
+
+
+
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/gradient_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+
+        <TextView
+            android:id="@+id/txtErrorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:text="This station requires action, as this Enhanced Pole Display unit is not defined on the QT system, etc."
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_drawable"
+                android:text="Log Out &amp; Exit Store"
+                android:textAllCaps="false"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/imgbanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/llWelcomeFooter"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="#0E6FB6"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLogoffWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:text="Logoffapp"
+                android:textColor="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llbottomver"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_weight="1"
+                android:gravity="right|center">
+
+                <TextView
+                    android:id="@+id/tvbottomAppname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="center|center_vertical"
+                    android:paddingRight="4dp"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvbottomVersionno1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <!--android:textColor="@color/totalColor"-->
+
+                <TextView
+                    android:id="@+id/tvbottomStationno1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="5dp"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

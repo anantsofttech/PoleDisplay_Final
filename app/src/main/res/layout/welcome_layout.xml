@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--welcome layout-->
+        <!--  <LinearLayout
+              android:id="@+id/llWelcomeScreen"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/llWelcomeScreen"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="25dp"-->
+            <!--android:text="Hello!"-->
+            <!--android:visibility="gone"-->
+            <!--android:textColor="#0e6fb6"-->
+            <!--android:textSize="35dp" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:visibility="gone"-->
+            <!--android:text="Welcome to our store."-->
+            <!--android:textSize="25dp" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_empty_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progressBarStore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/light_grey"
+                        android:indeterminateTintMode="src_in" />
+
+                </LinearLayout>
+
+                <com.santalu.autoviewpager.AutoViewPager
+                    android:id="@+id/viewPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- </LinearLayout>-->
+        <!--welcome layout end-->
+
+        <!--welcome footer old-->
+        <!--<LinearLayout-->
+        <!--android:id="@+id/llWelcomeFooter"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:gravity="bottom"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--&lt;!&ndash;android:background="@color/colorPrimary"&ndash;&gt;-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvLogoffWelcome"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_weight="2"-->
+        <!--android:text="Logoff"-->
+        <!--android:textColor="@android:color/transparent"-->
+        <!--android:textSize="17dp"-->
+        <!--android:textStyle="bold" />-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/tvbottomStoreno"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginEnd="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginRight="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layouravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_mt_weight="1"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:gravity="right"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text=""&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textColor="@android:color/white"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="17dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:visibility="gone" />&ndash;&gt;-->
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvbottomVersionno"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="right"-->
+        <!--android:text=""-->
+        <!--android:textColor="@color/totalColor"-->
+        <!--android:textSize="17dp"-->
+        <!--android:textStyle="bold" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvbottomStationno"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="right"-->
+        <!--android:text=""-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:textColor="@color/totalColor"-->
+        <!--android:textSize="17dp"-->
+        <!--android:textStyle="bold"-->
+        <!--/>-->
+
+        <!--</LinearLayout>-->
+        <!--welcome footer end old-->
+
+        <FrameLayout
+            android:id="@+id/flVersion_footer_welcome_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:background="@android:color/black"
+            android:gravity="bottom"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/llWelcomeFooter"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <!--android:background="@color/colorPrimary"-->
+
+            <TextView
+                android:id="@+id/tvLogoffWelcome"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Logoffapp"
+                android:textColor="@android:color/transparent"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvbottomAppname"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvbottomVersionno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <!--android:textColor="@color/totalColor"-->
+
+            <TextView
+                android:id="@+id/tvbottomStationno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:paddingLeft="8dp"
+                android:paddingRight="10dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

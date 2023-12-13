@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "60653143828",
+    "firebase_url": "https://pole-display-default-rtdb.firebaseio.com",
+    "project_id": "pole-display",
+    "storage_bucket": "pole-display.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60653143828:android:0a612dbfc7a4cfae96a401",
+        "android_client_info": {
+          "package_name": "com.poledisplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60653143828-7sebsm37dpkbape5cc7g8een9jahqpnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHNIqndK6re1MOPJHU3FxOx3BQ2YqVUGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60653143828-7sebsm37dpkbape5cc7g8een9jahqpnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60653143828:android:2caf36499d88b5f596a401",
+        "android_client_info": {
+          "package_name": "com.poledisplayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60653143828-khdl8kvdpqh3i02gmjt5ks18lqjdsfrm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.poledisplayapp",
+            "certificate_hash": "d62f64204a3dde224536873b72533bfe263ad9d9"
+          }
+        },
+        {
+          "client_id": "60653143828-7sebsm37dpkbape5cc7g8een9jahqpnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHNIqndK6re1MOPJHU3FxOx3BQ2YqVUGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60653143828-7sebsm37dpkbape5cc7g8een9jahqpnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

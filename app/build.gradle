@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    //Android_pole_display_v1.79
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.poledisplayapp"
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 119
+        versionName "poledisplayV1.119"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+ext {
+    jacksonVersion = '2.8.8'
+}
+dependencies {
+//    api 'com.google.android.material:material:1.1.0-alpha06'
+//    implementation 'com.google.android.material:material:1.1.0-alpha06'
+//    implementation 'com.google.android.material:material:1.3.0-alpha02'
+//    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // testCompile 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'commons-logging:commons-logging-api:1.1'
+    implementation 'org.jsoup:jsoup:1.10.2'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'androidx.annotation:annotation:1.0.0'
+//    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+//    implementation 'com.google.firebase:firebase-core:21.1.1'
+//    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+//    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+//    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+
+//    implementation 'com.google.firebase:firebase-core:16.0.4'
+    // for real-time database
+//    implementation 'com.google.firebase:firebase-database:20.1.0'
+//Edited by Varun
+//    implementation platform('com.google.firebase:firebase-bom:31.0.0')
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+//    END
+
+    // Add the dependencies for the Crashlytics and Analytics libraries
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-core:19.0.0'
+    implementation "com.google.firebase:firebase-iid:21.1.0"
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation "com.google.firebase:firebase-messaging:17.3.0"
+//    implementation 'com.google.firebase:firebase-database:16.0.4'
+//    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+//    implementation 'com.google.firebase:firebase-database:11.8.0'
+
+//    implementation 'com.google.firebase:firebase-database:9.6.1'
+
+//    implementation 'com.google.firebase:firebase-messaging:15.0.0'
+//    implementation 'com.google.firebase:firebase-core:15.0.0'
+//    implementation 'com.google.android.gms:play-services:15.0.0'
+//    implementation 'com.google.android.gms:play-services-vision:15.0.0'
+//    implementation 'com.google.firebase:firebase-crash:15.0.0'
+//    implementation 'com.google.android.gms:play-services-vision:15.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'com.github.santalu:auto-viewpager:1.0.1'
+
+    implementation 'com.github.pzienowicz:androidx-auto-scroll-view-pager:1.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+//    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation files('libs/httpclient-4.5.2.jar')
+    implementation files('libs/httpcore-4.4.4.jar')
+    implementation 'com.github.demoNo:AutoScrollViewPager:v1.0.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //blipboard integration
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.6.0'
+    implementation "com.squareup.retrofit2:converter-simplexml:2.6.1"
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+//    implementation 'com.google.firebase:firebase-crashlytics'
+//    implementation 'com.google.firebase:firebase-analytics'
+//    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+
+//    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+//    implementation 'com.crashlytics.sdk.android:crashlytics:11.2.2'
+//    implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+//    implementation 'com.google.firebase:firebase-crashlytics'
+//    implementation 'com.google.firebase:firebase-analytics'
+//    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+}
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+

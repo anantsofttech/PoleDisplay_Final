@@ -71,12 +71,12 @@ public class Constant {
 //    public static boolean isFromBlipBoard = true;
 
     //local
-    public static String IMG_BASE = "http://192.168.172.244:808/";
-    public static String WS_BASE = "http://192.168.172.244:889";
-    public static String LighningURL = "http://192.168.172.244:140/LigtningOnlineService.asmx/";
-    public static String authHeader="Bearer 9ed36663c7905eb3dffe55d9ce79ef78cd30877a";
-    public static final String BASE_URL_BLIP = "https://app.blipbillboards.com/external/";
-    public static final String BASE_URL_QT = "https://api.placeexchange.com/v3/";
+//    public static String IMG_BASE = "http://192.168.172.244:808/";
+//    public static String WS_BASE = "http://192.168.172.244:889";
+//    public static String LighningURL = "http://192.168.172.244:140/LigtningOnlineService.asmx/";
+//    public static String authHeader="Bearer 9ed36663c7905eb3dffe55d9ce79ef78cd30877a";
+//    public static final String BASE_URL_BLIP = "https://app.blipbillboards.com/external/";
+//    public static final String BASE_URL_QT = "https://api.placeexchange.com/v3/";
 
     //    Test
 //    public static String IMG_BASE = "https://testimages.lightningpos.com/";
@@ -87,12 +87,12 @@ public class Constant {
 //    public static final String BASE_URL_QT = "https://api.placeexchange.com/v3/";
 
     //Secure
-//    public static String IMG_BASE = "https://images.lightningpos.com/";
-//    public static String WS_BASE = "https://ecomsecureWCF.lightningpos.com";
-//    public static String LighningURL = "http://posservice.lightningpos.com/LigtningOnlineService.asmx/";
-//    public static String authHeader="Bearer 971dcf8b19b3bc1cac56e40f5858bbad38823d4e";
-//    public static final String BASE_URL_BLIP = "https://app.blipbillboards.com/external/";
-//    public static final String BASE_URL_QT = "https://api.placeexchange.com/v3/";
+    public static String IMG_BASE = "https://images.lightningpos.com/";
+    public static String WS_BASE = "https://ecomsecureWCF.lightningpos.com";
+    public static String LighningURL = "http://posservice.lightningpos.com/LigtningOnlineService.asmx/";
+    public static String authHeader="Bearer 971dcf8b19b3bc1cac56e40f5858bbad38823d4e";
+    public static final String BASE_URL_BLIP = "https://app.blipbillboards.com/external/";
+    public static final String BASE_URL_QT = "https://api.placeexchange.com/v3/";
 
     public static String WS_BASE_URL = WS_BASE + "/WebStoreRestService.svc/";
     public static String IMG_BANNER_URL = "WebStoreImages/PoleImages/";

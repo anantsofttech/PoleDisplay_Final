@@ -1038,21 +1038,34 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
             myCustomPagerAdapter = new MyCustomPagerAdapter(MainActivity.this, Collections.singletonList(Constant.Computerperfect.get(selectedImageIndex)), true);
             mViewPager.setAdapter(myCustomPagerAdapter);
 
-            // Delay in milliseconds (15 seconds in this case)
-            long delayMillis = (long) (15 * 1000);
+            call_delay_again();
 
-            delayedRunnable = new Runnable() {
-                @Override
-                public void run() {
-                    // Reset the flag so the function can be called again
-                    computerPerfectImageCalled = false;
+            // Set the flag to true to indicate that the function has been called
+            computerPerfectImageCalled = true;
+        } else {
+            // If Computerperfect is null or empty, callImagesWs
+            callImagesWs();
+        }
+    }
 
-                    if (Constant.localgetAdRequestModel != null && !Constant.localgetAdRequestModel.isEmpty()) {
-                        Constant.localgetAdRequestModel.clear();
-                    }
-                    Toast.makeText(MainActivity.this, "Calling AGAIN", Toast.LENGTH_SHORT).show();
+    private void call_delay_again() {
 
-                    // Checking if the store time is closed or not
+        // Delay in milliseconds (15 seconds in this case)
+        long delayMillis = (long) (15 * 1000);
+
+        delayedRunnable = new Runnable() {
+            @Override
+            public void run() {
+                // Reset the flag so the function can be called again
+                computerPerfectImageCalled = false;
+
+                if (Constant.localgetAdRequestModel != null && !Constant.localgetAdRequestModel.isEmpty()) {
+                    Constant.localgetAdRequestModel.clear();
+                }
+                Toast.makeText(MainActivity.this, "Calling AGAIN", Toast.LENGTH_SHORT).show();
+
+                // Checking if the store time is closed or not
+                if (llBillingLayout.getVisibility() == View.GONE) {
                     if (isCallingAllowed()) {
                         callgetAdunit(StoreNoPref + "_" + StationNoPref);
 //                        callQT_Token();
@@ -1063,15 +1076,10 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                     }
                     // END
                 }
-            };
-            handler.postDelayed(delayedRunnable, delayMillis);
+            }
+        };
+        handler.postDelayed(delayedRunnable, delayMillis);
 
-            // Set the flag to true to indicate that the function has been called
-            computerPerfectImageCalled = true;
-        } else {
-            // If Computerperfect is null or empty, callImagesWs
-            callImagesWs();
-        }
     }
 
     private void displayQT(List<GetAdRequestModel> getAdRequestModel, String ad_unit_name) {
@@ -1130,12 +1138,14 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
             public void run() {
                 Toast.makeText(MainActivity.this, "Calling AGAIN", Toast.LENGTH_SHORT).show();
 //                  Checking if the store time is closed or not
-                if (isCallingAllowed()) {
+                if (llBillingLayout.getVisibility()==View.GONE) {
+                    if (isCallingAllowed()) {
 //                    callgetAdunit(StoreNoPref+"_"+StationNoPref);
-                    callQT_Token();
-                }else{
-                    Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
-                    callcomputerperfectimage();
+                        callQT_Token();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+                        callcomputerperfectimage();
+                    }
                 }
 //                END
             }
@@ -1417,6 +1427,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                                     //Log.d(TAG, "remove:" + "");
                                     Log.e("", "Going for remove:7 " );
                                     removeDataforSpecificSttion();
+                                    if (Constant.isFromQT) {
+                                        call_delay_again();
+                                    }
                                 }
 
                             }else{
@@ -1561,6 +1574,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
 //                        removeDataforSpecificSttion(Constant.customerOrderList);
                                 Log.e("", "Going for remove:1 " );
                                 removeDataforSpecificSttion();
+                                if (Constant.isFromQT) {
+                                    call_delay_again();
+                                }
                             } else {
                                 if (ListElementsArrayList != null && ListElementsArrayList.size() > 0) {
                                     for (int i = 0; i < ListElementsArrayList.size(); i++) {
@@ -1963,6 +1979,7 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
             if (!lastOrderModel.getQty().equals("0") && !lastOrderModel.getQty().equals("+1")
                     && !istenderedVal) {
 //                        && !lastOrderModel.getDescription().equalsIgnoreCase("Total $ ")) {
+                handler.removeCallbacks(delayedRunnable);
                 savefirebaseData(lastOrderModel, firebaseKey);
                 if (lastOrderModel.IsTenderScreen && ListElementsArrayList != null && ListElementsArrayList.size() > 0) {
                     if (lladv != null && lladv.getVisibility() == View.VISIBLE) {
@@ -1992,7 +2009,24 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
 //                                mViewPager.startAutoScroll();
 //                            } else {
 //                            }
-                            if (Constant.isFromQT){
+                            if (!Constant.isFromQT){
+                                callImagesWs();
+//                                Log.e(TAG, "displaydetails: QT3" );
+//                                Checking if the store time is closed or not
+//                                if (isCallingAllowed()) {
+//                                    callQT_Token();
+//                                }else{
+//                                    Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+//                                    callcomputerperfectimage();
+//                                }
+//                                END
+                            }
+//                            else{
+//
+//                            }
+                        }
+
+                        if (Constant.isFromQT){
                                 Log.e(TAG, "displaydetails: QT3" );
 //                                Checking if the store time is closed or not
                                 if (isCallingAllowed()) {
@@ -2002,9 +2036,6 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                                     callcomputerperfectimage();
                                 }
 //                                END
-                            }else{
-                                callImagesWs();
-                            }
                         }
 
                         new Handler().postDelayed(new Runnable() {
@@ -2067,6 +2098,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                                         public void run() {
                                             Log.e("", "Going for remove:4 " );
                                             removeDataforSpecificSttion();
+                                            if (Constant.isFromQT) {
+                                                call_delay_again();
+                                            }
                                         }
                                     });
 
@@ -2117,6 +2151,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
 
         if (!lastOrderModel.getQty().equals("0") && !lastOrderModel.getQty().equals("+1") && !istenderedVal
                 && !lastOrderModel.getDescription().equalsIgnoreCase("Total $ ")) {
+
+            handler.removeCallbacks(delayedRunnable);
+
             savefirebaseData(lastOrderModel, firebaseKey);
 //                            llWelcomeViewpagerLayout.setVisibility(View.GONE);
                            /* try {
@@ -2161,23 +2198,37 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                     //commented for version 1.6 refresh images
                     Constant.TransactionCounterForImage = 0;
                     Constant.isTimeToRefreshImg = true;
-                    if (Constant.isFromQT){
-                        Log.e(TAG, "displayPreviousWorkingdetails: QT4" );
-//                        Checking if the store time is closed or not
-                        if (isCallingAllowed()) {
-                            callQT_Token();
-                        }else{
-                            Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
-                            callcomputerperfectimage();
-                        }
-//                          END
-                    }else{
+                    if (!Constant.isFromQT){
                         callImagesWs();
+//                        Log.e(TAG, "displayPreviousWorkingdetails: QT4" );
+////                        Checking if the store time is closed or not
+//                        if (isCallingAllowed()) {
+//                            callQT_Token();
+//                        }else{
+//                            Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+//                            callcomputerperfectimage();
+//                        }
+////                          END
                     }
+//                    else{
+//
+//                    }
 //                    if (Constant.isFromBlipBoard) {
 //                        mViewPager.setVisibility(View.VISIBLE);
 //                        mViewPager.startAutoScroll();
 //                    }
+                }
+
+                if (Constant.isFromQT){
+                    Log.e(TAG, "displayPreviousWorkingdetails: QT4" );
+//                        Checking if the store time is closed or not
+                    if (isCallingAllowed()) {
+                        callQT_Token();
+                    }else{
+                        Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+                        callcomputerperfectimage();
+                    }
+//                          END
                 }
                 new Handler().postDelayed(new Runnable() {
                         @Override
@@ -2250,24 +2301,39 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
 
                     Constant.TransactionCounterForImage = 0;
                     Constant.isTimeToRefreshImg = true;
-                    if (Constant.isFromQT){
-                        Log.e(TAG, "displayPreviousWorkingdetails: QT5");
-//                          Checking if the store time is closed or not
-                        if (isCallingAllowed()) {
-                            callQT_Token();
-                        }else{
-                            Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
-                            callcomputerperfectimage();
-                        }
-//                        END
-                    }else{
+                    if (!Constant.isFromQT){
                         callImagesWs();
+//                        Log.e(TAG, "displayPreviousWorkingdetails: QT5");
+////                          Checking if the store time is closed or not
+//                        if (isCallingAllowed()) {
+//                            callQT_Token();
+//                        }else{
+//                            Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+//                            callcomputerperfectimage();
+//                        }
+//                        END
                     }
+//                    else{
+//
+//                    }
 //                    if (Constant.isFromBlipBoard) {
 //                        mViewPager.setVisibility(View.VISIBLE);
 //                        mViewPager.startAutoScroll();
 //                    }
                 }
+
+                if (Constant.isFromQT){
+                    Log.e(TAG, "displayPreviousWorkingdetails: QT5");
+//                          Checking if the store time is closed or not
+                    if (isCallingAllowed()) {
+                        callQT_Token();
+                    }else{
+                        Toast.makeText(MainActivity.this, "Store Timing Is Closed !", Toast.LENGTH_SHORT).show();
+                        callcomputerperfectimage();
+                    }
+//                        END
+                }
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -2350,6 +2416,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
 //                            public void run() {
                 Log.e("", "Going for remove:5 " );
                                 removeDataforSpecificSttion();
+                                if (Constant.isFromQT) {
+                                    call_delay_again();
+                                }
 //                            }
 //                        });
 //                    }
@@ -2537,7 +2606,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                 llOrderTotal.setVisibility(View.GONE);
                 llBillingLayout.setVisibility(View.GONE);
                 lladv.setVisibility(View.VISIBLE);
-                if (!Constant.isFromQT){
+                if (Constant.isFromQT){
+                    call_delay_again();
+                }else{
                     mViewPager.startAutoScroll();
                 }
                 //mViewPager.startAutoScroll();
@@ -2692,6 +2763,9 @@ public class MainActivity extends AppCompatActivity implements TaskImages.TaskIm
                         public void run() {
                             Log.e("", "Going for remove:6 " );
                             removeDataforSpecificSttion();
+                            if (Constant.isFromQT) {
+                                call_delay_again();
+                            }
                         }
                     });
                 }

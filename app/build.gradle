@@ -8,8 +8,8 @@ android {
         applicationId "com.poledisplayapp"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 119
-        versionName "poledisplayV1.119"
+        versionCode 121
+        versionName "poledisplayV1.121"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
